@@ -6,5 +6,8 @@ This repository is a collection of various arduino-based projects, sketches and 
 
 Enjoy.
 
+Unless noted, all materials here are licensed under the MIT License.
+(See "LICENSE")
+
 
 
