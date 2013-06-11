@@ -3,45 +3,32 @@
 outputs
 ========
 
-Sketches for Chapter 2 from the OSEPP "Arduino Companion" book,
+Randomly makes an array of LEDs twinkle for random durations.
+
+Besd on sketches for Chapter 2 from the OSEPP "Arduino Companion" book,
 *Arduino Basics*.
 
-
-Try to randomize delay and color on each loop
 */
 
-int LED0 = 2;
-int LED1 = 3;
-int LED2 = 4;
-int LED3 = 5;
-int delay_count = 200;
+int delay_count = 1200;
 
 void setup()
 {
-  pinMode(LED0, OUTPUT);
-  pinMode(LED1, OUTPUT);
-  pinMode(LED2, OUTPUT);
-  pinMode(LED3, OUTPUT);
-
+  int i;
+  // Start at pin 2, go up to 5
+  for (i = 2; i <= 5; i++)
+    pinMode(i, OUTPUT);
 }
 
 void loop()
 {
-  digitalWrite(LED0, HIGH);
-  delay(delay_count);
-  digitalWrite(LED0, LOW);
-  delay(delay_count);
-  digitalWrite(LED1, HIGH);
-  delay(delay_count);
-  digitalWrite(LED1, LOW);
-  delay(delay_count);
-  digitalWrite(LED2, HIGH);
-  delay(delay_count);
-  digitalWrite(LED2, LOW);
-  delay(delay_count);
-  digitalWrite(LED3, HIGH);
-  delay(delay_count);
-  digitalWrite(LED3, LOW);
-  delay(delay_count);
+  int led = random(2,6);
+  int delay_dur = random(0, delay_count);
+
+  digitalWrite(led, HIGH);
+  delay(delay_dur);
+  digitalWrite(led, LOW);
+  delay_dur = random(0, delay_count);
+  delay(delay_dur);  
 }
 
