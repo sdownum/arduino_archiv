@@ -22,8 +22,8 @@ void setup()
 void loop()
 {
   state = digitalRead(pin);
-  Serial.print("The button state is ");
-  Serial.println(state);
-  delay(1000);
+  if (state)
+    Serial.println("The button was pressed.");
+  delay(300);
 }
 
