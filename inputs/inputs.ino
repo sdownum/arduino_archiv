@@ -1,34 +1,29 @@
 /*
 
-outputs
+inputs
 ========
 
-Randomly makes an array of LEDs twinkle for random durations.
+Detects a button push and reports the state to the serial console.
 
-Besd on sketches for Chapter 2 from the OSEPP "Arduino Companion" book,
+Besd on sketches for Chapter 3 from the OSEPP "Arduino Companion" book,
 *Arduino Basics*.
 
 */
 
-int delay_count = 1200;
+int state = 0;
+int pin = 13;
 
 void setup()
 {
-  int i;
-  // Start at pin 2, go up to 5
-  for (i = 2; i <= 5; i++)
-    pinMode(i, OUTPUT);
+  pinMode(pin, INPUT);
+  Serial.begin(9600);
 }
 
 void loop()
 {
-  int led = random(2,6);
-  int delay_dur = random(0, delay_count);
-
-  digitalWrite(led, HIGH);
-  delay(delay_dur);
-  digitalWrite(led, LOW);
-  delay_dur = random(0, delay_count);
-  delay(delay_dur);  
+  state = digitalRead(pin);
+  Serial.print("The button state is ");
+  Serial.println(state);
+  delay(1000);
 }
 
