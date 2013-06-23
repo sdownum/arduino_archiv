@@ -1,7 +1,8 @@
 inputs
 ========
 
-Detects a button push and reports the state to the serial console.
+Detects a button push and reports the state to the serial console. Pressing the
+switch button will turn the Arduino on-board LED on or off.
 
 Besd on sketches for Chapter 3 from the OSEPP "Arduino Companion" book,
 *Arduino Basics*.
