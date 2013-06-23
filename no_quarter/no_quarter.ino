@@ -11,19 +11,8 @@ Of course, this is a #wip.
 
 Yes, this is currently just blink from Arduino.cc
 
+
+This file is just a stub for the Arduino IDE. The implementation is 
+found in no_quarter.cpp
+
 */
-int led = 13;
-int delay_count = 50;
-
-void setup()
-{
-  pinMode(led, OUTPUT);
-}
-
-void loop()
-{
-  digitalWrite(led, HIGH);
-  delay(delay_count);
-  digitalWrite(led, LOW);
-  delay(delay_count);
-}
