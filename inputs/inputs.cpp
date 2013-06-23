@@ -26,17 +26,26 @@ void setup()
   Serial.begin(9600);
 }
 
+void strobe()
+{
+	  digitalWrite(out_pin, HIGH);
+	  delay(50);
+	  digitalWrite(out_pin, LOW);
+	  delay(50);
+}
+
+
 void loop()
 {
   state = digitalRead(pin);
   if (!state) {
 	  Serial.println("The button was pressed.");
-	  if (out_pin_state != LEDOFF)
-		  digitalWrite(out_pin, LOW);
-	  else
-		  digitalWrite(out_pin, HIGH);
 	  out_pin_state = -1 * out_pin_state;
   }
+  if (out_pin_state != LEDOFF)
+	  strobe();
+  else
+	  digitalWrite(out_pin, LOW);
   delay(300);
 }
 
