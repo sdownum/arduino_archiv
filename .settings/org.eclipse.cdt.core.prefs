@@ -1,4 +1,9 @@
 eclipse.preferences.version=1
+environment/project/it.baeyens.avreclipse.configuration.app.release.980545052.1472200926.1719691211.162613816/BUILDARTIFACT/delimiter=\:
+environment/project/it.baeyens.avreclipse.configuration.app.release.980545052.1472200926.1719691211.162613816/BUILDARTIFACT/operation=replace
+environment/project/it.baeyens.avreclipse.configuration.app.release.980545052.1472200926.1719691211.162613816/BUILDARTIFACT/value=game.elf
+environment/project/it.baeyens.avreclipse.configuration.app.release.980545052.1472200926.1719691211.162613816/append=true
+environment/project/it.baeyens.avreclipse.configuration.app.release.980545052.1472200926.1719691211.162613816/appendContributed=true
 environment/project/it.baeyens.avreclipse.configuration.app.release.980545052.1472200926.1719691211.2067213377/BUILDARTIFACT/delimiter=\:
 environment/project/it.baeyens.avreclipse.configuration.app.release.980545052.1472200926.1719691211.2067213377/BUILDARTIFACT/operation=replace
 environment/project/it.baeyens.avreclipse.configuration.app.release.980545052.1472200926.1719691211.2067213377/BUILDARTIFACT/value=inputs.elf
