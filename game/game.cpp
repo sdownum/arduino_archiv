@@ -17,7 +17,8 @@ Besd on sketches for Tutorial 4 from the OSEPP "Arduino Companion" book,
 
 */
 
-int delay_count = 1200;
+int current_led = 2;
+int delay_count = 200;
 
 void setup()
 {
@@ -25,17 +26,44 @@ void setup()
   // Start at pin 2, go up to 5
   for (i = 2; i <= 5; i++)
     pinMode(i, OUTPUT);
+
+  pinMode(13, INPUT);
+
+}
+
+int check_input() {
+	if (digitalRead(13) == 0)
+		return 1;
+	else
+		return 0;
 }
 
 void loop()
 {
-  int led = random(2,6);
-  int delay_dur = random(0, delay_count);
+	if (digitalRead(13) == 0) {
+		// Blink the chosen LED
+		digitalWrite(current_led, HIGH);
+		delay(200);
+		digitalWrite(current_led, LOW);
+		delay(200);
+		digitalWrite(current_led, HIGH);
+		delay(200);
+		digitalWrite(current_led, LOW);
+		delay(200);
 
-  digitalWrite(led, HIGH);
-  delay(delay_dur);
-  digitalWrite(led, LOW);
-  delay_dur = random(0, delay_count);
-  delay(delay_dur);
+		if(current_led == 4) {
+			// Speed up the game - the correct
+			// LED was chosen
+			delay_count -= 20;
+		}
+	}
+	digitalWrite(current_led, HIGH);
+	delay(delay_count);
+	digitalWrite(current_led, LOW);
+	delay(delay_count);
+	current_led += 1;
+
+	if (current_led > 5)
+		current_led = 2;
 }
 
